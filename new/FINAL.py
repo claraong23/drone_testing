@@ -484,8 +484,8 @@ class RightWallFollower:
         while self.running:
             # After 5 minutes: stop cleanly, climb to 2.5 m, do a 360° spin,
             # then resume wall-following. Triggers exactly once.
-            if not altitude_raised and (asyncio.get_running_loop().time() - start_time) >= 280:
-                print("[SEQ] 5-min trigger: stop -> climb -> 360 spin")
+            if not altitude_raised and (asyncio.get_running_loop().time() - start_time) >= 225:
+                print("[SEQ] 3.75 min trigger: stop -> climb -> 360 spin")
                 await self.hold_position(0.5)
                 await self.climb_to_altitude(2.9)
 
